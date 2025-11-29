@@ -505,8 +505,9 @@ st.markdown("Steph Curry became the greatest shooter ever and reshaped how the e
 
 
 st.header("References", anchor ="References")
-st.subheader("- NBA API (`nba_api`) for player and league stats ")
+st.subheader("- NBA API for player and league stats ")
 st.subheader("- Basketball Reference for historical league averages  ")
 st.subheader("- NBA Shot Charts: https://kivanpolimis.com/nba-shot-charts-part-1.html")
+
 
 

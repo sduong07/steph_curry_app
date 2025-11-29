@@ -84,7 +84,7 @@ st.title("How Steph Curry Changed the NBA Forever")
 
 st.header("A data-driven look at the 3-point revolution", anchor = "About this site")
 
-st.markdown("This website demonstrates how Python, Streamlit, and data can be used to tell a story — in this case, how a single player transformed the NBA and the game of basketball. We will be mostly using these stats: 3P (3 Pointers), 3PA(3 Point Attempts), eFG%(Effective Field Goal Percentage), and TS%(True Shooting Percentage). ")
+st.markdown("“This website demonstrates how Python, Streamlit, and data can be used to tell a story — in this case, how a single player transformed the NBA and the game of basketball. We will mainly focus on two stats: 3P (3-Point Field Goals Made) and 3PA (3-Point Attempts).")
 
 st.image("steph_curry.jfif", width=300)
 
@@ -97,7 +97,7 @@ st.image("steph_curry.jfif", width=300)
 
 st.subheader("The NBA Before Steph Curry was Drafted(2000 to 2009)", anchor = "3 Point Revolution Timeline")
 
-st.markdown("Before Steph Curry was drafted, 3-point shooting was a secondary strategy. The graph below highlights the league average(per game) of 3 Pointers and 3 Pointers Attempts. Most teams averaged less than 20 attempts per game, focusing instead on midrange and paint scoring.")
+st.markdown("Before Steph Curry was drafted, 3-point shooting was a secondary strategy. The graph below shows the league average 3-pointers made and attempted per game. Most teams took fewer than 20 threes per game, relying more heavily on mid-range and paint scoring.")
 
 
 df_2000_2009 = pd.read_csv("2000_2009_3P_stats.csv")
@@ -138,7 +138,7 @@ else:
 #Curry before the 1st championship (2009 to 2015)
 
 st.header("Curry's Rise(2009 to 2015)")
-st.markdown("When Steph Curry first entered the league, his deep range and release began to change the league. The graphs below highlights the increase in the 3P and 3PA, from the years 2009 to 2015. The time period 2009 to 2015 is when he was first drafted to his first championship. Notice the spike in 2015 in 3P and 3PA, it was when he won mvp for the season.")
+st.markdown("When Steph Curry entered the league, his deep range and quick release began to change how teams played. This period captures the beginning of the shift. Comparing 2000–2015, you can see how 3P and 3PA steadily increased—but notice the jump around 2015, the year Curry won MVP.")
 
 
 df_2000_2015 = pd.read_csv("2000_2015_3P_stats.csv")
@@ -229,7 +229,7 @@ else:
 #Section 4:
 #Steph Curry impact from 2015 to 2024 
 st.header("The 3 Point Revolution(2015 to 2025)")
-st.markdown("When Steph Curry first entered the league, his deep range and release began to change the league. From the graphs below, you can notice the increase in the 3P and 3PA, from the years 2015 to 2025. You can see the total impact comparing to todays game.")
+st.markdown("This era shows the full impact of Steph Curry and the Warriors. 3-point attempts and makes increase dramatically across the league, and modern offense becomes built around spacing, pace, and shooting.")
 
 
 df_2000_2025 = pd.read_csv("2015_2025_3P_stats.csv")
@@ -304,7 +304,11 @@ else:
 
 st.header("Efficency", anchor ="Efficency")
 
-st.markdown("Overall comparing it from 2000 to 2025 you notice the dramatic increase in 3P and 3PA. We will be introducing two new stats: Effective Field Goal Percentage(eFG%) and True Shooting Percentage(TS%). They are both used to describe how efficient a team scores from the field. eFG accounts for 3 pointers giving a accurate measure of scoring efficiency. While TS goes further by inlcuding free throws, showing how a effieciently player of team scores.From the graphs below, you notice a rise in eFG and TS which means nba scoring has become more efficient(ie: Players are scoring more points per shot attempt) and consistent. This also means teams are taking smarter and high value shots: such as more 3's, less midrange jumpers, more shots at the rim, and better shots selection overall.")
+st.markdown("We now introduce two efficiency statistics used widely in modern analytics:")
+st.markdown("*eFG% (Effective Field Goal Percentage)**: Accounts for 3-pointers being worth more than 2-pointers")
+st.markdown("**TS% (True Shooting Percentage)**: Includes free throws for a full scoring efficiency measure.")
+st.markdown("Both metrics rise from 2000–2025, showing that teams are not only shooting more threes—but scoring more efficiently overall.")
+
 
 
 df_2000_2025_league_wide = pd.read_csv("2000_2025_league_stats_pergame.csv")
@@ -343,7 +347,7 @@ else:
 
 st.header("Steph’s vs League average", anchor ="Steph’s vs League average")
 
-st.markdown("Futhermore, the graphs below shows how Curry's 3P volume increased relative to the league as well as the efficiency comparions over time. ")
+st.markdown("These graphs show how Curry’s 3-point volume and accuracy compare to league averages. He consistently attempts and makes far more threes than the league average, while maintaining elite efficiency.")
 
 df_league_vs_curry = pd.read_csv("curry_vs_league_avg.csv")
 
@@ -420,7 +424,7 @@ else:
 
 st.header("Shot Chart", anchor ="Shot Chart")
 
-st.markdown("These shot charts below compare Stephen Curry, Damian Lillard, and DeMar DeRozan to show how NBA scoring changed over time. Curry represents the shift toward deep, high-volume three-point shooting. Lillard followed as one of the players who expanded this style, while DeRozan offers a contrast as a midrange-heavy scorer who gradually adapted to the modern game. You can notice the dramatic changes to their shots, comparing early into their career and then after the warriors won their title.")
+st.markdown("These shot charts compare Stephen Curry, Damian Lillard, and DeMar DeRozan to show how NBA scoring styles have evolved. Curry represents the shift toward deep, high-volume threes. Lillard follows a similar modern style. DeRozan provides contrast as a midrange-heavy scorer who gradually adapted to today’s spacing era. Notice the dramatic changes to their shots, comparing early into their career and then after the warriors won their title.")
 
 # filepaths (update to your actual filenames)
 curry_imgs = {
@@ -471,7 +475,7 @@ st.markdown("Steph Curry Shot Chart")
 
 images = sorted(glob.glob("Steph_Curry_shot_chart/*.png"))
 
-year = st.slider("Season", 2009, 2025, 2009)
+year = st.slider("Season", 2009, 2023, 2009)
 img_path = f"Steph_Curry_shot_chart/Curry_{year}.png"
 st.image(img_path, width=500, caption=f"Curry Shot Chart {year}")
 
@@ -480,7 +484,7 @@ st.markdown("Demar Derozan shot chart")
 
 images = sorted(glob.glob("DeRozen_shot_chart/*.png"))
 
-year_derozen = st.slider("Season", 2009, 2024, 2009)
+year_derozen = st.slider("Season", 2009, 2023, 2009)
 img_path_derozen = f"DeRozen_shot_chart/DeRozan_{year_derozen}.png"
 st.image(img_path_derozen, width=500,  caption=f"DeRozen Shot Chart {year_derozen}")
 
@@ -508,6 +512,5 @@ st.header("References", anchor ="References")
 st.subheader("- NBA API for player and league stats ")
 st.subheader("- Basketball Reference for historical league averages  ")
 st.subheader("- NBA Shot Charts: https://kivanpolimis.com/nba-shot-charts-part-1.html")
-
 
 

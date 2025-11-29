@@ -1,0 +1,21 @@
+/* local.css */
+
+/* Change all text color */
+html, body, [class*="css"]  {
+    color: #FF0000 !important;  /* Example: blue text */
+}
+
+/* Titles */
+h1 {
+    color: #FF0000 !important;  /* red */
+}
+
+/* Headers (subheader, header, etc.) */
+h2, h3, h4, h5, h6 {
+    color: #FF0000 !important;  /* green */
+}
+
+/* Markdown paragraphs */
+p {
+    color: #FF0000 !important;  /* dark gray */
+}

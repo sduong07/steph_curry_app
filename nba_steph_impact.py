@@ -305,7 +305,7 @@ else:
 st.header("Efficency", anchor ="Efficency")
 
 st.markdown("We now introduce two efficiency statistics used widely in modern analytics:")
-st.markdown("*eFG% (Effective Field Goal Percentage)**: Accounts for 3-pointers being worth more than 2-pointers")
+st.markdown("**eFG% (Effective Field Goal Percentage)**: Accounts for 3-pointers being worth more than 2-pointers")
 st.markdown("**TS% (True Shooting Percentage)**: Includes free throws for a full scoring efficiency measure.")
 st.markdown("Both metrics rise from 2000–2025, showing that teams are not only shooting more threes—but scoring more efficiently overall.")
 

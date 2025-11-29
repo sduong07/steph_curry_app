@@ -84,7 +84,7 @@ st.title("How Steph Curry Changed the NBA Forever")
 
 st.header("A data-driven look at the 3-point revolution", anchor = "About this site")
 
-st.markdown("“This website demonstrates how Python, Streamlit, and data can be used to tell a story — in this case, how a single player transformed the NBA and the game of basketball. We will mainly focus on two stats: 3P (3-Point Field Goals Made) and 3PA (3-Point Attempts).")
+st.markdown("This website demonstrates how Python, Streamlit, and data can be used to tell a story — in this case, how a single player transformed the NBA and the game of basketball. We will mainly focus on two stats: 3P (3-Point Field Goals Made) and 3PA (3-Point Attempts).")
 
 st.image("steph_curry.jfif", width=300)
 
@@ -484,7 +484,7 @@ st.markdown("Demar Derozan shot chart")
 
 images = sorted(glob.glob("DeRozen_shot_chart/*.png"))
 
-year_derozen = st.slider("Season", 2009, 2023, 2009)
+year_derozen = st.slider("Season ", 2009, 2023, 2009)
 img_path_derozen = f"DeRozen_shot_chart/DeRozan_{year_derozen}.png"
 st.image(img_path_derozen, width=500,  caption=f"DeRozen Shot Chart {year_derozen}")
 
@@ -494,7 +494,7 @@ st.markdown("Damian Lillard shot chart")
 
 images = sorted(glob.glob("Lillard_shot_chart/*.png"))
 
-year_Lillard = st.slider("Season", 2013, 2023, 2013)
+year_Lillard = st.slider("Season  ", 2013, 2023, 2013)
 img_path_Lillard = f"Lillard_shot_chart/Lillard_{year_Lillard}.png"
 st.image(img_path_Lillard, width=500, caption=f"Lillard Shot Chart {year_Lillard}")
 

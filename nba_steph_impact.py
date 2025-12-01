@@ -409,7 +409,7 @@ with col3:
     st.pyplot(fig6)
 
 
-st.markdown("These scattet plots compares Curry's 3-pointers made and attempts per game to the league's. The correlation which we quantified (from a range of -1 and +1) shows how Curry's shooting rise align with the league's. This means there is a positive correlation between Curry's 3 point shooting increased, and the leagues overall with it increased 3-point attempts and makes.")
+st.markdown("These scattet plots compares Curry's 3-pointers made and attempts per game to the league's. The correlation which we quantified (from a range of -1 and +1) shows how Curry's shooting rise align with the league's. This means there is a positive correlation between Curry's 3 point shooting increased, and the leagues overall with it increased 3-point attempts(0.855) and makes(0.684).")
 
 correlate_df = pd.read_csv("league_curry_correlation.csv")
 
@@ -435,7 +435,7 @@ plt.plot(x, p(x))
 for i, year in enumerate(corr_years):
     plt.annotate(str(year), (x[i], y[i]), textcoords="offset points", xytext=(5, 5))
 
-plt.title(f"Curry vs League (Corr = {corr:.3f})")
+plt.title(f"Curry vs League 3PM per Game (Correlation = {corr:.3f})")
 plt.xlabel("Curry 3PM per Game")
 plt.ylabel("League 3PM per Game")
 plt.grid(True)

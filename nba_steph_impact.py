@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import base64
 from PIL import Image
 import glob
+import numpy as np
+
 
 @st.cache_data
 def load_data(path):
@@ -405,6 +407,71 @@ with col2:
     st.pyplot(fig5)
 with col3:
     st.pyplot(fig6)
+
+
+st.markdown("These scattet plots compares Curry's 3-pointers made and attempts per game to the league's. The correlation which we quantified (from a range of -1 and +1) shows how Curry's shooting rise align with the league's. This means there is a positive correlation between Curry's 3 point shooting increased, and the leagues overall with it increased 3-point attempts and makes.")
+
+correlate_df = pd.read_csv("league_curry_correlation.csv")
+
+corr = correlate_df['Curry_FG3M_per_game'].corr(correlate_df['League_3PM_per_game'])
+corr_3pa= correlate_df['Curry_FG3A_per_game'].corr(correlate_df['League_3PA_per_game'])
+
+x = correlate_df['Curry_FG3M_per_game']
+y = correlate_df['League_3PM_per_game']
+
+x1= correlate_df['Curry_FG3A_per_game']
+y1=correlate_df['League_3PA_per_game']
+
+corr_years = correlate_df['Season']
+
+fig7a = plt.figure(figsize=(10, 5))
+
+plt.scatter(x, y)
+
+z = np.polyfit(x, y, 1)
+p = np.poly1d(z)
+plt.plot(x, p(x))
+
+for i, year in enumerate(corr_years):
+    plt.annotate(str(year), (x[i], y[i]), textcoords="offset points", xytext=(5, 5))
+
+plt.title(f"Curry vs League (Corr = {corr:.3f})")
+plt.xlabel("Curry 3PM per Game")
+plt.ylabel("League 3PM per Game")
+plt.grid(True)
+
+fig7b = plt.figure(figsize=(10, 5))
+
+
+
+plt.scatter(x1, y1)
+
+
+z1 = np.polyfit(x1, y1, 1)
+p = np.poly1d(z1)
+plt.plot(x1, p(x1))
+
+
+for i, year in enumerate(corr_years):
+    plt.annotate(str(year), (x1[i], y1[i]), textcoords="offset points", xytext=(5, 5))
+
+#plt.title("Correlation: Curry vs League 3PM per Game")
+plt.title(f"Curry vs League 3PA per Game (Correlation = {corr_3pa:.3f})")
+plt.xlabel("Curry 3PA per Game")
+plt.ylabel("League 3PA per Game")
+
+plt.grid(True)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.pyplot(fig7a)
+
+with col2:
+    st.pyplot(fig7b)
+
+
+
 
 
 display_option_league_vs_curry = st.radio(

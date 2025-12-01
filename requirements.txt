@@ -3,3 +3,4 @@ streamlit-scroll-navigation
 pandas
 matplotlib
 pillow
+numpy

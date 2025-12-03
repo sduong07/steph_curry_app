@@ -35,6 +35,16 @@ hide_streamlit_style = """
     </style>
 """
 
+
+hide_footer = """
+<style>
+footer {visibility: hidden;}
+footer:after {content:''; visibility:hidden;}
+</style>
+"""
+
+
+
 top_bar_css = """
 <style>
 header[data-testid="stHeader"] {
@@ -44,7 +54,7 @@ header[data-testid="stHeader"] {
 """
 
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
+st.markdown(hide_footer, unsafe_allow_html=True)
 
 
 def set_bg_local(image_file):
